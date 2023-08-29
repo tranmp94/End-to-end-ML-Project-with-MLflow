@@ -1,7 +1,8 @@
 import os
-import pandas as pd
 from src.mlProject import logger
 from src.mlProject.entity.config_entity import DataValidationConfig
+import pandas as pd
+
 
 class DataValidation:
     def __init__(self, config: DataValidationConfig):
@@ -23,7 +24,6 @@ class DataValidation:
                     validation_status = False
                     with open(self.config.STATUS_FILE, 'w') as f:
                         f.write(f"Validation status: {validation_status}")
-                        break
                 else:
                     validation_status = True
                     with open(self.config.STATUS_FILE, 'w') as f:
